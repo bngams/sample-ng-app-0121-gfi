@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { GetStartedComponent } from './components/get-started/get-started.component';
 import { HeaderComponent } from './components/layout/header.component';
 import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 // decorator
 // Angular = module Angular
@@ -19,7 +21,9 @@ import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
     AppComponent,
     GetStartedComponent,
     HeaderComponent,
-    ExponentialStrengthPipe
+    ExponentialStrengthPipe,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

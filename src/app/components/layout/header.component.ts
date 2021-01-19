@@ -3,13 +3,16 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-    <p class="bold">
+    <span class="bold">
       {{headerTitle}}
-    </p>
+    </span>
+    <a class="menu-item" [routerLink]="'/home'" [routerLinkActive]="'active'">Home</a>
+    <a class="menu-item" routerLink="/get-started" routerLinkActive="active">Get Started</a>
   `,
-  styles: [
-    `.bold { font-weight: bolder; color: red; }`
-  ]
+  styles: [`
+    .bold { font-weight: bolder; color: red; }
+    .menu-item { margin: 0 15px; }
+  `]
 })
 export class HeaderComponent implements OnInit {
   @Input() headerTitle: string;
