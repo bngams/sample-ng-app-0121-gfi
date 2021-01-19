@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7a91a4f6a6cbe29e3b289101e76e86124522f0b4" datatype="html">
+        <source>Hello <x id="INTERPOLATION" equiv-text="{{ name }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/get-started/get-started.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Say hello to user</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
