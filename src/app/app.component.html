@@ -1,2 +1,5 @@
-<app-header></app-header>
-<app-get-started></app-get-started>
+<!-- input -->
+<app-header [headerTitle]="title"></app-header>
+{{ title }}
+<!-- output -->
+<app-get-started (buttonClicked)="handleOutput($event)"></app-get-started>
