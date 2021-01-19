@@ -5,6 +5,10 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
+  // /user/profile
+  { path: 'user', loadChildren:
+    () => import('./modules/user/user.module')
+      .then(m => m.UserModule) },
   { path: 'get-started', component: GetStartedComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
