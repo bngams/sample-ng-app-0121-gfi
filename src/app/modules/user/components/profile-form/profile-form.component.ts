@@ -10,6 +10,7 @@ import { UserService } from '../../services/user.service';
 })
 export class ProfileFormComponent implements OnInit {
   profileForm: FormGroup;
+  user: any;
 
   constructor(private userService: UserService) { }
 
@@ -21,14 +22,18 @@ export class ProfileFormComponent implements OnInit {
 
   changedSession(): void {
     this.userService.session.subscribe({
-      next: (v) => console.log(`session changed: ${v}`)
+      next: (v) => console.log(`session changed: ${v}`),
+      error: (e) => console.log(e)
     });
     this.userService.connect();
   }
 
   loadUser(): void {
     this.userService.hello();
-    this.userService.getUser().subscribe(r => console.log('user', r));
+    this.userService.getUser().subscribe(r => {
+      console.log('user', r);
+      this.user = r;
+    });
   }
 
   initForm(values: any): void {

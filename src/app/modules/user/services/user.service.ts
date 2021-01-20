@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -53,10 +54,22 @@ export class UserService {
 
   getUser(): Observable<any> {
     return this.httpClient
-      .get('https://jsonplaceholder.typicode.com/users/1');
+      .get(environment.apiBaseUrl + 'users/1');
     // .pipe(
     //   map(u => u.name = u.name.toUppercase)
     // );
+  }
+
+  treatmentWithException(): Observable<boolean> {
+    return new Observable((subscriber) => {
+      try {
+        //
+        //
+        subscriber.next(true);
+      } catch (error) {
+        subscriber.error(false);
+      }
+    });
   }
 
 }

@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-header',
   template: `
     <mat-toolbar color="primary">
-      <span class="">
+      <span id="app-title">
         {{headerTitle}}
       </span>
 
