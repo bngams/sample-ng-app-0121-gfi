@@ -9,7 +9,7 @@ import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
+import { SharedModule } from './shared.module';
 
 // decorator
 // Angular = module Angular
@@ -31,7 +31,7 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

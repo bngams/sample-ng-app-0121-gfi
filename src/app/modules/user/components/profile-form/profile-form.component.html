@@ -1,2 +1,11 @@
-<p>profile-form works!</p>
-<button mat-raised-button color="primary">Primary</button>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Firstname</mat-label>
+        <input matInput name="firstname" [formControlName]="'firstName'">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Lastname</mat-label>
+        <input matInput name="lastname" formControlName="lastName">
+    </mat-form-field>
+    <button mat-raised-button color="primary">Submit</button>
+</form>
