@@ -7,5 +7,5 @@
         <mat-label>Lastname</mat-label>
         <input matInput name="lastname" formControlName="lastName">
     </mat-form-field>
-    <button mat-raised-button color="primary">Submit</button>
+    <button mat-raised-button color="primary" [disabled]="profileForm.invalid">Submit</button>
 </form>

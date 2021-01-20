@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-profile-form',
@@ -9,10 +11,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ProfileFormComponent implements OnInit {
   profileForm: FormGroup;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.loadUser();
+    this.changedSession();
     this.initForm('values');
+  }
+
+  changedSession(): void {
+    this.userService.session.subscribe({
+      next: (v) => console.log(`session changed: ${v}`)
+    });
+    this.userService.connect();
+  }
+
+  loadUser(): void {
+    this.userService.hello();
+    this.userService.getUser().subscribe(r => console.log('user', r));
   }
 
   initForm(values: any): void {
@@ -23,7 +39,9 @@ export class ProfileFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.profileForm.value);
+    if (this.profileForm.valid) {
+      console.log(this.profileForm.value);
+    }
   }
 
 }

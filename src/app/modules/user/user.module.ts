@@ -13,6 +13,7 @@ import { SharedModule } from 'src/app/shared.module';
     CommonModule,
     UserRoutingModule,
     SharedModule
-  ]
+  ],
+  providers: []
 })
 export class UserModule { }
